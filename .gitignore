@@ -1,0 +1,113 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IDE / editors
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Cursor (local AI/editor state — keep rules/skills in repo if you version them)
+.cursor/
+
+# Environment & secrets (never commit credentials)
+.env
+.env.*
+!.env.example
+secrets/
+**/secrets.json
+**/credentials.json
+**/*-credentials.json
+
+# Flutter/Dart/Pub
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+**/doc/api/
+pubspec_overrides.yaml
+
+# Build outputs
+/build/
+**/build/
+.cxx/
+**/.cxx/
+
+# Test / coverage
+/coverage/
+*.lcov
+.test_coverage.dart
+
+# Symbolication & obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android (see also android/.gitignore)
+**/android/**/gradle-wrapper.jar
+**/android/.gradle/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/key.properties
+**/*.keystore
+**/*.jks
+
+# iOS/macOS (see also ios/.gitignore, macos/.gitignore)
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/**/DerivedData/
+**/ios/**/xcuserdata/
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/App.framework
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Desktop platform build artifacts
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
+**/macos/Flutter/ephemeral/
+
+# FVM (Flutter Version Management)
+.fvm/
+
+# Distribution binaries
+*.apk
+*.aab
+*.ipa
+*.app
+*.dmg
+
+# Firebase / Google services (uncomment if you use per-developer local configs)
+# android/app/google-services.json
+# ios/Runner/GoogleService-Info.plist
+
+# Code generation (uncomment if using build_runner and you regenerate locally)
+# **/*.g.dart
+# **/*.freezed.dart
+# **/*.mocks.dart
