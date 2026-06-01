@@ -35,7 +35,9 @@ class TransactionListTile extends StatelessWidget {
               item.isDeposit
                   ? Icons.arrow_downward_rounded
                   : Icons.arrow_upward_rounded,
-              color: AppColors.onBackground,
+              color: item.isDeposit
+                  ? AppColors.primary
+                  : AppColors.onBackground,
               size: 22,
             ),
           ),

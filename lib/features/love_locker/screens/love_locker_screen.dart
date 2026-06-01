@@ -57,7 +57,7 @@ class LoveLockerScreen extends StatelessWidget {
                       LoveLockerOptionTile(
                         icon: Icons.person_add_alt_1_outlined,
                         label: 'Add funds',
-                        onTap: () {},
+                        onTap: () => context.push(AppRoutes.addFunds),
                       ),
                       LoveLockerOptionTile(
                         icon: Icons.lock_outline_rounded,
@@ -67,12 +67,12 @@ class LoveLockerScreen extends StatelessWidget {
                       LoveLockerOptionTile(
                         icon: Icons.link_rounded,
                         label: 'Request Loan',
-                        onTap: () {},
+                        onTap: () => context.push(AppRoutes.borrowFunds),
                       ),
                       LoveLockerOptionTile(
                         icon: Icons.delete_outline_rounded,
                         label: 'Refund Loan',
-                        onTap: () {},
+                        onTap: () => context.push(AppRoutes.settleLoan),
                       ),
                       LoveLockerOptionTile(
                         icon: Icons.favorite_border_rounded,
@@ -82,7 +82,7 @@ class LoveLockerScreen extends StatelessWidget {
                       LoveLockerOptionTile(
                         icon: Icons.favorite_rounded,
                         label: 'Disburse policy',
-                        onTap: () {},
+                        onTap: () => context.push(AppRoutes.disbursePolicy),
                         showDivider: false,
                       ),
                     ],

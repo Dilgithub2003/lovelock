@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:love_lock/core/constants/app_assets.dart';
 import 'package:love_lock/core/constants/app_spacing.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
-import 'package:love_lock/features/dashboard/models/transaction_item.dart';
+import 'package:love_lock/features/dashboard/data/dashboard_transactions.dart';
 import 'package:love_lock/features/dashboard/widgets/dashboard_top_bar.dart';
 import 'package:love_lock/features/dashboard/widgets/love_lock_value_card.dart';
 import 'package:love_lock/features/dashboard/widgets/transaction_list_tile.dart';
+import 'package:love_lock/routes/app_routes.dart';
 
 /// Dashboard home tab content (no bottom nav — provided by shell).
 class DashboardHomeScreen extends StatelessWidget {
@@ -15,27 +17,6 @@ class DashboardHomeScreen extends StatelessWidget {
   });
 
   final VoidCallback onOpenSettings;
-
-  static const _transactions = [
-    TransactionItem(
-      title: 'Deposit',
-      dateLabel: 'Today',
-      amount: '+\$100.00',
-      isDeposit: true,
-    ),
-    TransactionItem(
-      title: 'Withdrawal',
-      dateLabel: 'Yesterday',
-      amount: '-\$50.00',
-      isDeposit: false,
-    ),
-    TransactionItem(
-      title: 'Deposit',
-      dateLabel: 'June 15, 2024',
-      amount: '+\$200.00',
-      isDeposit: true,
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +48,7 @@ class DashboardHomeScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => context.push(AppRoutes.transactions),
                       style: TextButton.styleFrom(
                         foregroundColor: AppColors.primary,
                         padding: EdgeInsets.zero,
@@ -85,7 +66,7 @@ class DashboardHomeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: AppSpacing.sectionSm),
-                ..._transactions.map(
+                ...DashboardTransactions.all.map(
                   (item) => TransactionListTile(item: item),
                 ),
               ],

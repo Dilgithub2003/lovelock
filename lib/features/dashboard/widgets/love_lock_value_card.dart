@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:love_lock/core/constants/app_spacing.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
+import 'package:love_lock/routes/app_routes.dart';
 
 /// Main balance card on the dashboard home screen.
 class LoveLockValueCard extends StatelessWidget {
@@ -56,7 +58,7 @@ class LoveLockValueCard extends StatelessWidget {
                   color: AppColors.primary,
                   borderRadius: BorderRadius.circular(50),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () => context.push(AppRoutes.addFunds),
                     borderRadius: BorderRadius.circular(50),
                     child: const Padding(
                       padding: EdgeInsets.symmetric(vertical: 14),
@@ -84,7 +86,7 @@ class LoveLockValueCard extends StatelessWidget {
                 color: AppColors.primary,
                 shape: const CircleBorder(),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () => context.push(AppRoutes.loveLocker),
                   customBorder: const CircleBorder(),
                   child: const SizedBox(
                     width: 52,
