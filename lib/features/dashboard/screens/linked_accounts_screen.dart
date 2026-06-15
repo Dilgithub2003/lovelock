@@ -91,7 +91,7 @@ class LinkedAccountsScreen extends StatelessWidget {
                       LinkedAccountsMenuTile(
                         leadingAvatar: ClipOval(
                           child: Image.asset(
-                            AppAssets.logo,
+                            AppAssets.femaleProfile,
                             width: 44,
                             height: 44,
                             fit: BoxFit.cover,

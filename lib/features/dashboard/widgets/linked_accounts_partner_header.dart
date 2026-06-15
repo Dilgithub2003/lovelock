@@ -30,7 +30,7 @@ class LinkedAccountsPartnerHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _ProfileBubble(label: 'YOU', imageAsset: AppAssets.logo),
+              _ProfileBubble(label: 'YOU', imageAsset: AppAssets.maleProfile),
               const SizedBox(width: 8),
               Container(
                 width: 40,
@@ -48,8 +48,7 @@ class LinkedAccountsPartnerHeader extends StatelessWidget {
               const SizedBox(width: 8),
               _ProfileBubble(
                 label: 'SARAH',
-                imageAsset: AppAssets.logo,
-                tint: AppColors.primary.withValues(alpha: 0.15),
+                imageAsset: AppAssets.femaleProfile,
               ),
             ],
           ),
@@ -96,12 +95,10 @@ class _ProfileBubble extends StatelessWidget {
   const _ProfileBubble({
     required this.label,
     required this.imageAsset,
-    this.tint,
   });
 
   final String label;
   final String imageAsset;
-  final Color? tint;
 
   @override
   Widget build(BuildContext context) {
@@ -122,12 +119,7 @@ class _ProfileBubble extends StatelessWidget {
             ],
           ),
           child: ClipOval(
-            child: tint != null
-                ? ColorFiltered(
-                    colorFilter: ColorFilter.mode(tint!, BlendMode.srcATop),
-                    child: Image.asset(imageAsset, fit: BoxFit.cover),
-                  )
-                : Image.asset(imageAsset, fit: BoxFit.cover),
+            child: Image.asset(imageAsset, fit: BoxFit.cover),
           ),
         ),
         const SizedBox(height: 8),

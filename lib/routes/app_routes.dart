@@ -50,4 +50,16 @@ abstract final class AppRoutes {
   static const String pendingUnlockName = 'pending-unlock';
   static const String createPost = '/create-post';
   static const String createPostName = 'create-post';
+  static const String giftExperiences = '/gift-experiences';
+  static const String giftExperiencesName = 'gift-experiences';
+  static const String giftProducts = '/gift-products';
+  static const String giftProductsName = 'gift-products';
+  static const String digitalGoods = '/digital-goods';
+  static const String digitalGoodsName = 'digital-goods';
+  static const String giftProductDetail = '/gift-product-detail';
+  static const String giftProductDetailName = 'gift-product-detail';
+  static const String giftExperienceDetail = '/gift-experience-detail';
+  static const String giftExperienceDetailName = 'gift-experience-detail';
+  static const String voucherDetail = '/voucher-detail';
+  static const String voucherDetailName = 'voucher-detail';
 }

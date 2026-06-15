@@ -27,4 +27,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/profile/
     - assets/images/social/
+    - assets/images/shopping/experience/
+    - assets/images/shopping/gifts/
+    - assets/images/shopping/vouture/

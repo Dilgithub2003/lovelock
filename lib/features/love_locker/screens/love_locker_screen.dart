@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:love_lock/core/constants/app_assets.dart';
 import 'package:love_lock/core/constants/app_spacing.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
 import 'package:love_lock/features/dashboard/models/dashboard_tab.dart';
@@ -49,6 +50,18 @@ class LoveLockerScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: SizedBox(
+                      height: 140,
+                      width: double.infinity,
+                      child: Image.asset(
+                        AppAssets.coupleImage,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sectionMd),
                   const LoveLockerSummaryCard(),
                   const SizedBox(height: AppSpacing.sectionLg),
                   LoveLockerSection(

@@ -106,7 +106,7 @@ class _ProfileHeader extends StatelessWidget {
           ),
           child: ClipOval(
             child: Image.asset(
-              AppAssets.logo,
+              AppAssets.coupleImage,
               fit: BoxFit.cover,
             ),
           ),

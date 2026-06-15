@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:love_lock/core/theme/app_colors.dart';
 import 'package:love_lock/features/dashboard/models/dashboard_tab.dart';
 import 'package:love_lock/features/dashboard/screens/dashboard_home_screen.dart';
 import 'package:love_lock/features/dashboard/screens/settings_screen.dart';
 import 'package:love_lock/features/feed/screens/social_feed_screen.dart';
+import 'package:love_lock/features/shopping/screens/shopping_screen.dart';
 import 'package:love_lock/features/dashboard/widgets/dashboard_scaffold.dart';
 
 /// Dashboard shell with shared bottom navigation across tabs.
@@ -35,7 +35,9 @@ class _DashboardShellScreenState extends State<DashboardShellScreen> {
           SocialFeedScreen(
             onOpenSettings: () => _selectTab(DashboardTab.settings),
           ),
-          const _PlaceholderTab(label: 'Shopping'),
+          ShoppingScreen(
+            onOpenSettings: () => _selectTab(DashboardTab.settings),
+          ),
           SettingsScreen(
             onBack: () => _selectTab(DashboardTab.home),
           ),
@@ -45,21 +47,3 @@ class _DashboardShellScreenState extends State<DashboardShellScreen> {
   }
 }
 
-class _PlaceholderTab extends StatelessWidget {
-  const _PlaceholderTab({required this.label});
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        label,
-        style: TextStyle(
-          color: AppColors.onBackground.withValues(alpha: 0.5),
-          fontSize: 18,
-        ),
-      ),
-    );
-  }
-}

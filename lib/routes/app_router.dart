@@ -10,6 +10,15 @@ import 'package:love_lock/features/dashboard/screens/profile_screen.dart';
 import 'package:love_lock/features/dashboard/screens/settings_detail_screen.dart';
 import 'package:love_lock/features/dashboard/screens/transactions_screen.dart';
 import 'package:love_lock/features/feed/screens/create_post_screen.dart';
+import 'package:love_lock/features/shopping/screens/digital_goods_screen.dart';
+import 'package:love_lock/features/shopping/screens/gift_experience_detail_screen.dart';
+import 'package:love_lock/features/shopping/screens/gift_experiences_screen.dart';
+import 'package:love_lock/features/shopping/screens/gift_product_detail_screen.dart';
+import 'package:love_lock/features/shopping/screens/gift_products_screen.dart';
+import 'package:love_lock/features/shopping/models/gift_product_detail.dart';
+import 'package:love_lock/features/shopping/models/gift_experience_detail.dart';
+import 'package:love_lock/features/shopping/models/voucher_detail.dart';
+import 'package:love_lock/features/shopping/screens/voucher_detail_screen.dart';
 import 'package:love_lock/features/love_locker/models/confirm_payment_args.dart';
 import 'package:love_lock/features/love_locker/screens/add_funds_screen.dart';
 import 'package:love_lock/features/love_locker/screens/borrow_funds_screen.dart';
@@ -213,6 +222,54 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         name: AppRoutes.createPostName,
         pageBuilder: (context, state) => const NoTransitionPage(
           child: CreatePostScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.giftExperiences,
+        name: AppRoutes.giftExperiencesName,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: GiftExperiencesScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.giftProducts,
+        name: AppRoutes.giftProductsName,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: GiftProductsScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.digitalGoods,
+        name: AppRoutes.digitalGoodsName,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: DigitalGoodsScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.giftProductDetail,
+        name: AppRoutes.giftProductDetailName,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: GiftProductDetailScreen.fromArgs(
+            state.extra as GiftProductDetailArgs?,
+          ),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.giftExperienceDetail,
+        name: AppRoutes.giftExperienceDetailName,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: GiftExperienceDetailScreen.fromArgs(
+            state.extra as GiftExperienceDetailArgs?,
+          ),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.voucherDetail,
+        name: AppRoutes.voucherDetailName,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: VoucherDetailScreen.fromArgs(
+            state.extra as VoucherDetailArgs?,
+          ),
         ),
       ),
     ],

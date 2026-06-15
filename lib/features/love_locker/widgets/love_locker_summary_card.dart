@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:love_lock/core/constants/app_assets.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
 
 /// Hero summary card at the top of the Love Locker screen.
@@ -19,17 +20,20 @@ class LoveLockerSummaryCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Row(
             children: [
-              Container(
-                width: 52,
+              SizedBox(
+                width: 68,
                 height: 52,
-                decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.25),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: const Icon(
-                  Icons.account_balance_rounded,
-                  color: AppColors.background,
-                  size: 28,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 0,
+                      child: _ProfileAvatar(imageAsset: AppAssets.maleProfile),
+                    ),
+                    Positioned(
+                      left: 28,
+                      child: _ProfileAvatar(imageAsset: AppAssets.femaleProfile),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(width: 14),
@@ -47,7 +51,7 @@ class LoveLockerSummaryCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Manage your Fund',
+                      'Sophia & Ethan · Shared Fund',
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontSize: 13,
                         color: AppColors.onBackground.withValues(alpha: 0.55),
@@ -63,6 +67,36 @@ class LoveLockerSummaryCard extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProfileAvatar extends StatelessWidget {
+  const _ProfileAvatar({required this.imageAsset});
+
+  final String imageAsset;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 44,
+      height: 44,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: AppColors.surfaceMuted, width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primaryGlow.withValues(alpha: 0.5),
+            blurRadius: 8,
+          ),
+        ],
+      ),
+      child: ClipOval(
+        child: Image.asset(
+          imageAsset,
+          fit: BoxFit.cover,
         ),
       ),
     );
