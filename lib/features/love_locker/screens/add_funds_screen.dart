@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:love_lock/core/constants/app_spacing.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
 import 'package:love_lock/core/widgets/primary_button.dart';
+import 'package:love_lock/core/widgets/screen_back_header.dart';
 import 'package:love_lock/features/dashboard/models/dashboard_tab.dart';
 import 'package:love_lock/features/dashboard/widgets/dashboard_scaffold.dart';
 import 'package:love_lock/features/love_locker/models/confirm_payment_args.dart';
@@ -76,26 +77,7 @@ class _AddFundsScreenState extends State<AddFundsScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(4, 8, 8, 4),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () => context.pop(),
-                  icon: const Icon(Icons.arrow_back),
-                  color: AppColors.onBackgroundAccent,
-                ),
-                Text(
-                  'Add Funds',
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: AppColors.onBackgroundAccent,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const ScreenBackHeader(title: 'Add Funds'),
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),

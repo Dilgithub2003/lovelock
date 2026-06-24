@@ -73,11 +73,6 @@ class LoveLockerScreen extends StatelessWidget {
                         onTap: () => context.push(AppRoutes.addFunds),
                       ),
                       LoveLockerOptionTile(
-                        icon: Icons.lock_outline_rounded,
-                        label: 'Get Voucher',
-                        onTap: () {},
-                      ),
-                      LoveLockerOptionTile(
                         icon: Icons.link_rounded,
                         label: 'Request Loan',
                         onTap: () => context.push(AppRoutes.borrowFunds),
@@ -90,7 +85,7 @@ class LoveLockerScreen extends StatelessWidget {
                       LoveLockerOptionTile(
                         icon: Icons.favorite_border_rounded,
                         label: 'Initiate unlock request',
-                        onTap: () {},
+                        onTap: () => context.push(AppRoutes.unlockRequest),
                       ),
                       LoveLockerOptionTile(
                         icon: Icons.favorite_rounded,

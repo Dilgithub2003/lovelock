@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:love_lock/core/constants/app_spacing.dart';
 import 'package:love_lock/core/theme/app_colors.dart';
 import 'package:love_lock/core/widgets/primary_button.dart';
+import 'package:love_lock/core/widgets/screen_back_header.dart';
 import 'package:love_lock/features/dashboard/models/dashboard_tab.dart';
 import 'package:love_lock/features/dashboard/widgets/dashboard_scaffold.dart';
 import 'package:love_lock/features/love_locker/models/borrow_destination.dart';
@@ -76,32 +77,12 @@ class _BorrowFundsScreenState extends State<BorrowFundsScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(4, 8, 8, 4),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () => context.pop(),
-                  icon: const Icon(Icons.arrow_back),
-                  color: AppColors.onBackground,
-                ),
-                Expanded(
-                  child: Text(
-                    'Borrow Funds',
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: AppColors.onBackground,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite_border_rounded),
-                  color: AppColors.onBackground,
-                ),
-              ],
+          ScreenBackHeader(
+            title: 'Borrow Funds',
+            trailing: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite_border_rounded),
+              color: AppColors.onBackgroundAccent,
             ),
           ),
           Expanded(
